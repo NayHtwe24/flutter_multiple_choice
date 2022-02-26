@@ -12,19 +12,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyQuizPage(),
+      home: QuizPage(),
     );
   }
 }
 
-class MyQuizPage extends StatefulWidget {
-  const MyQuizPage({Key? key}) : super(key: key);
+class QuizPage extends StatefulWidget {
+  const QuizPage({Key? key}) : super(key: key);
 
   @override
-  State<MyQuizPage> createState() => _MyQuizPageState();
+  State<QuizPage> createState() => _QuizPageState();
 }
 
-class _MyQuizPageState extends State<MyQuizPage> {
+class _QuizPageState extends State<QuizPage> {
   var isFirstTime = false;
   var numberOfChoices = 3; // Multiple Choice Limit
   var multipleChoices = [];
@@ -39,7 +39,7 @@ class _MyQuizPageState extends State<MyQuizPage> {
 
     correctAnswer = startNum;
     multipleChoices.add(correctAnswer);
-    debugPrint('Multiple Choice List Log: $multipleChoices');
+    //debugPrint('Multiple Choice List Log: $multipleChoices');
 
     var random = Random();
     var randomNumber = random.nextInt(9) + 1;
@@ -53,7 +53,7 @@ class _MyQuizPageState extends State<MyQuizPage> {
       // debugPrint('Multiple Choice Final List Log: $multipleChoices');
     }
     multipleChoices = multipleChoices..shuffle();
-    debugPrint('Shuffle Multiple Choice List Log: $multipleChoices');
+    //debugPrint('Shuffle Multiple Choice List Log: $multipleChoices');
   }
 
   void startProcess() {
